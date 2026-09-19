@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Download, Settings, Play, Pause, Square, Minus, Maximize2, X, ChevronUp } from 'lucide-react';
+import { Download, Settings, Play, Pause, Square, Minus, Maximize2, X, ChevronUp, Info } from 'lucide-react';
 
 export default function App() {
   const [isFocusing, setIsFocusing] = useState(false);
