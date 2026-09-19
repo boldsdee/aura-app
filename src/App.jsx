@@ -138,10 +138,10 @@ export default function App() {
               </a>
             </div>
 
-            <div className={`mt-6 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 backdrop-blur-sm shadow-sm ${textColors[bgTheme]}`}>
-              <h3 className="font-semibold text-sm mb-2 flex items-center gap-2"><Info size={16} />Installation Guide</h3>
-              <p className="text-sm opacity-80 mb-3">Since this is a free indie app, your computer might show an "unrecognized developer" warning. Here is how to easily bypass it:</p>
-              <ul className="text-sm opacity-80 space-y-2 list-disc pl-4 text-left">
+            <div className={`mt-6 p-5 rounded-2xl border border-blue-200/80 dark:border-blue-800/50 bg-blue-50/80 dark:bg-blue-900/20 backdrop-blur-sm shadow-sm ${bgTheme === 'dark' ? 'text-blue-100' : 'text-blue-900'}`}>
+              <h3 className="font-semibold text-sm mb-2 flex items-center gap-2 text-blue-700 dark:text-blue-300"><Info size={16} />Installation Guide</h3>
+              <p className="text-sm opacity-90 mb-3">Since this is a free indie app, your computer might show an "unrecognized developer" warning. Here is how to easily bypass it:</p>
+              <ul className="text-sm opacity-90 space-y-2 list-disc pl-4 text-left">
                 <li><strong>Mac:</strong> If it says "damaged", click Cancel. Go to System Settings &gt; Privacy & Security &gt; click <strong>Open Anyway</strong>.</li>
                 <li><strong>Windows:</strong> If SmartScreen blocks it, click <strong>More Info</strong> &gt; <strong>Run Anyway</strong>.</li>
               </ul>
