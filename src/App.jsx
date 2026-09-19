@@ -8,6 +8,18 @@ export default function App() {
   const [bgTheme, setBgTheme] = useState('glass'); 
   const [orbTheme, setOrbTheme] = useState('glass'); 
   const [showSettings, setShowSettings] = useState(false);
+  const settingsRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (settingsRef.current && !settingsRef.current.contains(event.target)) {
+        setShowSettings(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
 
   const formatTime = (seconds) => {
     const m = Math.floor(seconds / 60);
@@ -190,7 +202,7 @@ export default function App() {
             </div>
 
             <div className="flex justify-between items-center px-8 pb-8 pt-2 relative" style={{ WebkitAppRegion: 'no-drag' }}>
-              <div className="relative">
+              <div className="relative" ref={settingsRef}>
                 <button onClick={() => setShowSettings(!showSettings)} className={`p-2 rounded-full hover:bg-white/20 transition ${textColors[bgTheme]}`}>
                   <Settings size={18} />
                 </button>
