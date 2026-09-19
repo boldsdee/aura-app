@@ -1,0 +1,6 @@
+.vercel
+dist-electron
+dist
+*.dmg
+*.exe
+node_modules

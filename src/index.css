@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+body {
+  background: transparent !important;
+}
+
+@keyframes spin-z {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes spin-y {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+.sphere-3d {
+  border-radius: 50%;
+  /* Zoom in to push the black background of the image out of the clipping mask */
+  background-size: 110%;
+  background-position: center;
+  /* Use mask to ensure absolute smooth edges without anti-aliasing artifacts */
+  -webkit-mask-image: radial-gradient(white, black);
+  -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+  
+  box-shadow: inset -10px -10px 30px rgba(0,0,0,0.6), inset 10px 10px 20px rgba(255,255,255,0.2), 0 10px 25px rgba(0,0,0,0.3);
+  animation: spin-z 40s linear infinite;
+  border: none;
+}
+
+.coin-3d {
+  border-radius: 50%;
+  background-size: 112%;
+  background-position: center;
+  -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+  
+  box-shadow: 0 15px 25px rgba(0,0,0,0.4);
+  animation: spin-y 5s linear infinite;
+  transform-style: preserve-3d;
+  border: none;
+}
+
+@keyframes pulse-scale {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.gears-3d {
+  border-radius: 50%;
+  background-size: 110%;
+  background-position: center;
+  -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+  
+  box-shadow: inset -10px -10px 30px rgba(0,0,0,0.8), inset 5px 5px 15px rgba(255,255,255,0.3), 0 15px 25px rgba(0,0,0,0.5);
+  animation: pulse-scale 4s ease-in-out infinite;
+  border: none;
+}
