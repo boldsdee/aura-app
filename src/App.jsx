@@ -127,6 +127,10 @@ export default function App() {
               <Download size={16} /><span className="text-[15px] font-medium">Windows</span>
             </a>
           </div>
+          <p className={`text-xs mt-3 opacity-60 max-w-sm ${textColors[bgTheme]}`}>
+            <strong>Note:</strong> Since this is a free indie app, you may see a "unrecognized developer" warning. 
+            On Mac: <em>Right-click &gt; Open</em>. On Windows: <em>More Info &gt; Run Anyway</em>.
+          </p>
         </div>
       )}
 
