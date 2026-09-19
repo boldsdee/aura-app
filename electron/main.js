@@ -1,4 +1,6 @@
 import { app, BrowserWindow, ipcMain } from 'electron';
+import pkg from 'electron-updater';
+const { autoUpdater } = pkg;
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -29,6 +31,9 @@ function createWindow() {
   } else {
     win.loadFile(path.join(__dirname, '../dist/index.html'));
   }
+
+  // Check for updates silently in the background
+  autoUpdater.checkForUpdatesAndNotify();
 }
 
 ipcMain.on('window-minimize', () => {

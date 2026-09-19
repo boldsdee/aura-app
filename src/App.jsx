@@ -135,7 +135,16 @@ export default function App() {
       )}
 
       {/* Widget Container with Ambient Smoke/Mist Effect */}
-      <div className="relative z-10 w-full max-w-sm">
+      <div className="relative z-10 w-full max-w-sm flex flex-col items-center">
+        {isWeb && (
+          <div className="mb-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-xs font-semibold uppercase tracking-widest pointer-events-none">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+            </span>
+            Live Interactive Demo
+          </div>
+        )}
         {isWeb && (
           <div className="absolute inset-0 pointer-events-none -z-10">
             {/* Soft misty glows to highlight glassmorphism */}
